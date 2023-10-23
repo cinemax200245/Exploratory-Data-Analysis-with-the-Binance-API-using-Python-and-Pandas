@@ -7,7 +7,7 @@ from binance import *
 apiKey = 'S9qqbQoL7OYrDi6CqVKmIhitVItgYwbi6TIVtf3Pni2dM4eHt1wTjM4OZLgW1yt5'
 secretKey = '2bGRDM3SQNLWDlhXvsQcD8rbNxH3Aolx3SbZn2lvtniNDAVMIPxmPFMYYZoAaeVF'
 
-client = set(apiKey,apiSecret)
+client = set(apiKey,secretKey)
 
 #client = Client(apiKey, secretKey)
 
