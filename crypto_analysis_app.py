@@ -4,10 +4,6 @@ import plotly.express as px
 import cufflinks as cf
 from binance import Client
 
-# Set your Binance API keys
-apiKey = 'S9qqbQoL7OYrDi6CqVKmIhitVItgYwbi6TIVtf3Pni2dM4eHt1wTjM4OZLgW1yt5'
-secretKey = '2bGRDM3SQNLWDlhXvsQcD8rbNxH3Aolx3SbZn2lvtniNDAVMIPxmPFMYYZoAaeVF'
-
 client = Client(apiKey, secretKey)
 
 def fetch_crypto_data(crypto_symbol, interval='1d', start_date='2011-01-01'):
