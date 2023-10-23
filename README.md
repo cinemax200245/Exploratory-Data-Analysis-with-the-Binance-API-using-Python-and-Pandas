@@ -17,7 +17,7 @@
 <p>Before running the app, ensure that you have the necessary Python libraries installed. You can install them using the following:</p>
 
 <pre>
-<code>pip install streamlit pandas plotly cufflinks</code>
+<code>pip install streamlit pandas plotly cufflinks python-binance</code>
 </pre>
 
 <h3>Usage</h3>
