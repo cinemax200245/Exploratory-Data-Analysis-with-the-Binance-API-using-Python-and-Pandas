@@ -12,18 +12,33 @@ client = set(apiKey,secretKey)
 #client = Client(apiKey, secretKey)
 
 def fetch_crypto_data(crypto_symbol, interval='1d', start_date='2011-01-01'):
-    historical = client.get_historical_klines(crypto_symbol, interval, start_date)
-    historicalDf = pd.DataFrame(historical)
-    historicalDf.columns = ['Open Time', 'Open', 'High', 'Low', 'Close', 
-                            'Volume', 'Close Time', 'Quote Asset Volume', 'Number of Trades', 
-                            'Taker Buy Base Volume', 'Taker Buy Quote Volume', 'Ignore']
-    historicalDf['Open Time'] = pd.to_datetime(historicalDf['Open Time']/1000, unit='s')
-    historicalDf['Close Time'] = pd.to_datetime(historicalDf['Close Time']/1000, unit='s')
-    numeric_cols = ['Open', 'High', 'Low', 'Close', 'Volume',
-                    'Quote Asset Volume', 'Taker Buy Base Volume',
-                    'Taker Buy Quote Volume']
-    historicalDf[numeric_cols] = historicalDf[numeric_cols].apply(pd.to_numeric, axis=1)
-    return historicalDf
+    try:
+        # Create the Binance client
+        client = Client(apiKey, secretKey)
+
+        # Fetch historical data
+        historical = client.get_historical_klines(crypto_symbol, interval, start_date)
+        
+        if historical is None:
+            st.warning(f"Data not available for {crypto_symbol}. Please check the cryptocurrency symbol.")
+            return pd.DataFrame()
+
+        # Process the data
+        historicalDf = pd.DataFrame(historical)
+        historicalDf.columns = ['Open Time', 'Open', 'High', 'Low', 'Close', 
+                                'Volume', 'Close Time', 'Quote Asset Volume', 'Number of Trades', 
+                                'Taker Buy Base Volume', 'Taker Buy Quote Volume', 'Ignore']
+        historicalDf['Open Time'] = pd.to_datetime(historicalDf['Open Time']/1000, unit='s')
+        historicalDf['Close Time'] = pd.to_datetime(historicalDf['Close Time']/1000, unit='s')
+        numeric_cols = ['Open', 'High', 'Low', 'Close', 'Volume',
+                        'Quote Asset Volume', 'Taker Buy Base Volume',
+                        'Taker Buy Quote Volume']
+        historicalDf[numeric_cols] = historicalDf[numeric_cols].apply(pd.to_numeric, axis=1)
+        return historicalDf
+    
+    except Exception as e:
+        st.warning(f"An error occurred: {str(e)}")
+        return pd.DataFrame()
 
 def plot_candlestick_chart(data):
     fig = px.candlestick(data, x='Open Time', open='Open', high='High', low='Low', close='Close', title='Candlestick Chart')
@@ -61,9 +76,6 @@ def main():
         # Plot Monthly Closing Price Distribution
         st.subheader("Monthly Closing Price Distribution")
         plot_monthly_price_distribution(crypto_data)
-
-    else:
-        st.warning(f"Data not available for {crypto_symbol}. Please check the cryptocurrency symbol.")
 
 if __name__ == "__main__":
     main()
