@@ -69,12 +69,13 @@
 
 <h2>Location Constraints</h2>
 
-<p><strong>Important:</strong> Due to regulatory constraints, this app may not function properly if accessed from certain locations. Binance, the underlying provider of cryptocurrency data, imposes restrictions on access from specific regions, including but not limited to the United States, Canada, Ontario, Malaysia, etc.</p>
+<p style="color: red;"><strong>Important:</strong> This app may not function properly if accessed from certain locations due to regulatory constraints. Binance, the underlying provider of cryptocurrency data, imposes restrictions on access from specific regions, including but not limited to the United States, Canada, Ontario, Malaysia, etc.</p>
 
-<p>Before using the app, please refer to Binance's user terms and conditions to ensure compliance with their geographical restrictions. If you are accessing this app from a restricted location, the Binance API may not provide the expected data, and you might encounter errors or limitations.</p>
+<p>Additionally, please note that Streamlit servers are located and based in the United States. As a result, users from restricted regions may encounter issues running this app on Streamlit's servers.</p>
 
-<p><strong>Note:</strong> It is the user's responsibility to comply with all applicable laws and regulations related to cryptocurrency trading and data access in their jurisdiction.</p>
+<p>To ensure proper functionality, it is recommended to run this app/code locally on your machine using a local Jupyter notebook. </p>
 
+<p>Make sure to replace 'apiKey' and 'secretKey' with your actual Binance API key and secret key.</p>
 
 </body>
 </html>
