@@ -2,9 +2,14 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import cufflinks as cf
-from binance import Client
+from binance import *
 
-client = Client(apiKey, secretKey)
+apiKey = 'S9qqbQoL7OYrDi6CqVKmIhitVItgYwbi6TIVtf3Pni2dM4eHt1wTjM4OZLgW1yt5'
+secretKey = '2bGRDM3SQNLWDlhXvsQcD8rbNxH3Aolx3SbZn2lvtniNDAVMIPxmPFMYYZoAaeVF'
+
+client = set(apiKey,apiSecret)
+
+#client = Client(apiKey, secretKey)
 
 def fetch_crypto_data(crypto_symbol, interval='1d', start_date='2011-01-01'):
     historical = client.get_historical_klines(crypto_symbol, interval, start_date)
