@@ -2,12 +2,10 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import cufflinks as cf
-from binance import *
+from binance import Client, ThreadedWebsocketManager, ThreadedDepthCacheManager
 
 apiKey = 'S9qqbQoL7OYrDi6CqVKmIhitVItgYwbi6TIVtf3Pni2dM4eHt1wTjM4OZLgW1yt5'
 secretKey = '2bGRDM3SQNLWDlhXvsQcD8rbNxH3Aolx3SbZn2lvtniNDAVMIPxmPFMYYZoAaeVF'
-
-client = set(apiKey,secretKey)
 
 #client = Client(apiKey, secretKey)
 
