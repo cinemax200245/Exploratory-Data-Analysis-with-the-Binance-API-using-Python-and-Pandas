@@ -67,13 +67,14 @@
 
 <p>If you still face problems, feel free to open an issue in this repository.</p>
 
-<h2>Contributing</h2>
+<h2>Location Constraints</h2>
 
-<p>Contributions are welcome! If you find any bugs, have suggestions for improvements, or want to add new features, please open an issue or submit a pull request.</p>
+<p><strong>Important:</strong> Due to regulatory constraints, this app may not function properly if accessed from certain locations. Binance, the underlying provider of cryptocurrency data, imposes restrictions on access from specific regions, including but not limited to the United States, Canada, Ontario, Malaysia, etc.</p>
 
-<h2>License</h2>
+<p>Before using the app, please refer to Binance's user terms and conditions to ensure compliance with their geographical restrictions. If you are accessing this app from a restricted location, the Binance API may not provide the expected data, and you might encounter errors or limitations.</p>
 
-<p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
+<p><strong>Note:</strong> It is the user's responsibility to comply with all applicable laws and regulations related to cryptocurrency trading and data access in their jurisdiction.</p>
+
 
 </body>
 </html>
